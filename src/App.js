@@ -7,7 +7,12 @@ class App extends React.Component{
   constructor(props){
     super(props)
       this.state = {
-        colors:[]
+        colors: [{
+          "id": "test-001",
+          "title": "bright red",
+          "color": "#ff0000",
+          "rating":"5"
+        }]
     }
   }
   
