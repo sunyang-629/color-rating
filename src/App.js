@@ -11,7 +11,7 @@ class App extends React.Component{
           "id": "test-001",
           "title": "bright red",
           "color": "#ff0000",
-          "rating":"5"
+          "rating":"4"
         }]
     }
   }

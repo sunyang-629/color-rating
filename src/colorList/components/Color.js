@@ -1,5 +1,5 @@
 import React from 'react';
-// import { StarRating } from './StarRating';
+import StarRating from './StarRating';
 import './../styles/Color.scss';
 
 const Color = ({title,color,rating=0}) => {
@@ -8,10 +8,11 @@ const Color = ({title,color,rating=0}) => {
             <h1>{title}</h1>
             <div className='color' style={{backgroundColor:color}}>
             </div>
+            <div>
+                <StarRating starsSelected={rating} />
+            </div>
         </section>
     )
 }
-            // <div>
-            //     <StarRating starsSelected={rating} />
-            // </div>
+
 export default Color;
