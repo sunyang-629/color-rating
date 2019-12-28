@@ -11,12 +11,12 @@ class StarRating extends React.Component{
     }
 
     render() {
-        const { starsSelected } = this.props;
+        const { starsSelected, onRate } = this.props;
         const { totalStars } = this.state;
         return (
             <div className="star-rating">
                 {[...Array(totalStars)].map((star, i) =>
-                    <Star key={i} selected={i<starsSelected} />
+                    <Star key={i} selected={i < starsSelected} onRate={() => onRate(i+1)}/>
                     )}
                 <p>{starsSelected} of {totalStars} stars</p>
             </div>
@@ -26,7 +26,8 @@ class StarRating extends React.Component{
 
 StarRating.propTypes = {
     starsSelected: PropTypes.number,
-    // totalStars:PropTypes.number
+    // totalStars:PropTypes.number,
+    onRate: PropTypes.func
 }
 
 export default StarRating;

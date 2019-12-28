@@ -16,12 +16,25 @@ class App extends React.Component{
     }
   }
   
+  rateColor = (id, rating) => {
+    this.setState(prevState => ({
+      colors: prevState.colors.map(color => 
+        (color.id !== id) ?
+          color :
+          {
+            ...color,
+            rating
+          }
+      )
+  }))
+}
+
   render() {
     const { colors } = this.state;
     return (
       <div className="app">
         <AddColorForm />
-        <ColorList colors={colors}/>
+        <ColorList colors={colors} onRate={this.rateColor}/>
      </div>
     )
   }
